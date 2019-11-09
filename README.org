@@ -1,0 +1,6 @@
+* SB-THREAD-SHIM for arm32
+  sbcl does not have thread support on armhf, but some software which doesn't
+  really need threads assumes it will always be present & calls
+  ~SB-THREAD:MAKE-THREAD~ when ~CL:FUNCALL~ would work. this shim does just
+  that, so i can use [[https://github.com/stumpwm/stumpwm][stumpwm]] on armhf (to take advantage of the optimization of
+  using a 32-bit abi on a machine with <= 4gb ram).
